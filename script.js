@@ -1,8 +1,9 @@
 	async function fetchData() {
     const sheetId = '1REChA-k-xs8zezOCeBHXTWGPBHxqtnehdllqm9drFYQ'; // Replace with your Google Sheets ID
-    const apiKey = 'AIzaSyDuBSwOBhSjUa8kmvG0XU6aTIX9KVdqz6M';   // Replace with your API Key
+    const apiKey = 'AIzaSyAQS4wnHD4cw2y6VoqdyXqiOnmaV6PAQxc';   // Replace with your API Key
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Commands?key=${apiKey}`;
-
+	//https://sheets.googleapis.com/v4/spreadsheets/1REChA-k-xs8zezOCeBHXTWGPBHxqtnehdllqm9drFYQ/values/Commands?key=AIzaSyAQS4wnHD4cw2y6VoqdyXqiOnmaV6PAQxc
+	
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Failed to fetch data');
