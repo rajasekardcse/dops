@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dops | DevOps Command Reference</title>
+    <link rel="icon" href="ref/dops-icon.png" type="image/x-icon"> <!-- Add favicon -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #456776;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styles */
+        .section-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #dde6e3;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-header:hover {
+            background-color: #a2b7b0;
+        }
+
+        /* Icon Styles */
+        .section-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        /* Table Styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #899fa8;
+            color: white;
+        }
+
+        .collapsed tbody,
+        .collapsed thead {
+            display: none;
+        }
+
+        /* Popup Styles */
+        .popup {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            border-radius: 5px;
+            z-index: 1000;
+            font-size: 14px;
+        }
+
+        /* Button and Highlight Styles */
+        .highlight {
+            background-color: #ffd966;
+        }
+
+        .command-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .command-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #456776;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        DevOps Command References
+    </div>
+
+    <!-- Sections -->
+    <div id="sections" class="section-container"></div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup"></div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2024 DevOps Reference
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
