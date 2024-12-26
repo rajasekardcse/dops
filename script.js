@@ -7,6 +7,11 @@ async function fetchData() {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Failed to fetch data');
         const data = await response.json();
+
+        if (!data.values || data.values.length < 2) {
+            throw new Error('No valid data found in the sheet');
+        }
+
         processSections(data.values); // Process rows into sections
     } catch (error) {
         console.error('Error:', error);
@@ -16,11 +21,20 @@ async function fetchData() {
 
 function processSections(rows) {
     const container = document.querySelector('#sectionsContainer');
+    if (!container) {
+        console.error('Error: #sectionsContainer element not found in DOM');
+        return;
+    }
+
     const sections = {};
 
     // Organize rows into sections based on the 'Section' column
     rows.slice(1).forEach(row => {
         const [_, section, command, description] = row; // Skip S.No column
+        if (!section || !command || !description) {
+            console.warn('Skipping invalid row:', row);
+            return;
+        }
         if (!sections[section]) {
             sections[section] = [];
         }
@@ -82,5 +96,5 @@ function copyToClipboard(text) {
     });
 }
 
-// Fetch and display data from Google Sheets
-fetchData();
+// Ensure DOM is loaded before running the script
+document.addEventListener('DOMContentLoaded', fetchData);
